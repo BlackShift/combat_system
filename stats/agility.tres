@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Stat" load_steps=2 format=3 uid="uid://dodlaxn2i8hx4"]
+
+[ext_resource type="Script" path="res://combat_system/RPGCombat/stat.gd" id="1_7s0jr"]
+
+[resource]
+script = ExtResource("1_7s0jr")
+label = "Agility"
+color = Color(0, 0, 0, 1)

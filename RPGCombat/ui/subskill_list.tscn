@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7n4ofpjo3f4a"]
+
+[ext_resource type="Script" path="res://combat_system/RPGCombat/ui/subskill_list.gd" id="1_ynpai"]
+
+[node name="SubSkillList" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ynpai")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="SkillContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2

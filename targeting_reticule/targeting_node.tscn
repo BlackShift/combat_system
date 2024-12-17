@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://p12npkjr1xgf"]
+
+[ext_resource type="Script" path="res://combat_system/targeting_reticule/targeting_node.gd" id="1_i4ycl"]
+[ext_resource type="ArrayMesh" uid="uid://dwt7cy8msh134" path="res://combat_system/targeting_reticule/target_mesh_exported.res" id="2_t1www"]
+[ext_resource type="Shader" path="res://combat_system/targeting_reticule/targeting_mat.gdshader" id="2_ya5yg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yk8k5"]
+render_priority = 0
+shader = ExtResource("2_ya5yg")
+shader_parameter/point_size = null
+shader_parameter/roughness = null
+shader_parameter/specular = null
+shader_parameter/metallic = null
+shader_parameter/emission = null
+shader_parameter/emission_energy = null
+shader_parameter/subsurface_scattering_strength = null
+
+[node name="targeting_node" type="Node3D"]
+top_level = true
+script = ExtResource("1_i4ycl")
+
+[node name="diamond" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.595, 0, 0, 0, 0.595, 0, 0, 0, 0.595, 0, 0.192463, 0)
+mesh = ExtResource("2_t1www")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_yk8k5")

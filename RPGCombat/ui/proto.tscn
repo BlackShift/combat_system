@@ -1,0 +1,206 @@
+[gd_scene load_steps=12 format=3 uid="uid://bpmfs4ehxfrq3"]
+
+[ext_resource type="Script" uid="uid://bgr6pgk58gsgx" path="res://combat_system/RPGCombat/ui/proto.gd" id="1_5riyl"]
+[ext_resource type="Theme" uid="uid://bqaqujdwa5jkp" path="res://combat_system/RPGCombat/ui/rpgmakertheme.tres" id="1_m2xyf"]
+[ext_resource type="Script" uid="uid://dvg8ddugi2cc4" path="res://combat_system/RPGCombat/ui/battleStats.gd" id="2_gt1v7"]
+[ext_resource type="Script" uid="uid://bwffbk0ovker2" path="res://combat_system/RPGCombat/actor.gd" id="2_t5xon"]
+[ext_resource type="Resource" uid="uid://dqoi5cu4w7812" path="res://combat_system/actors/PlayerCharacter.tres" id="3_1xldj"]
+[ext_resource type="Script" uid="uid://bv3qu714747ed" path="res://combat_system/RPGCombat/skills.gd" id="4_yjk2t"]
+[ext_resource type="Script" uid="uid://7rtysdwl40ds" path="res://combat_system/RPGCombat/stat_state.gd" id="5_1ny83"]
+[ext_resource type="Resource" uid="uid://b33gugksikojh" path="res://combat_system/skills/spell.tres" id="5_h4lbt"]
+[ext_resource type="Resource" uid="uid://diacbrb8fd55i" path="res://combat_system/skills/attack.tres" id="6_3x5wf"]
+
+[sub_resource type="Resource" id="Resource_anjkn"]
+script = ExtResource("4_yjk2t")
+name = "Cook"
+description = ""
+visible = true
+target_mode = 0
+target_filter = 0
+
+[sub_resource type="Resource" id="Resource_q0xjg"]
+script = ExtResource("2_t5xon")
+stats = Array[ExtResource("5_1ny83")]([])
+skills = Array[ExtResource("4_yjk2t")]([ExtResource("6_3x5wf"), ExtResource("5_h4lbt"), SubResource("Resource_anjkn")])
+name = "ted"
+level = 0
+team = null
+
+[node name="Proto" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_m2xyf")
+script = ExtResource("1_5riyl")
+actors = Array[ExtResource("2_t5xon")]([ExtResource("3_1xldj"), SubResource("Resource_q0xjg")])
+menu_duration = 0.1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 462.0
+offset_top = 19.0
+offset_right = 767.0
+offset_bottom = 96.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Actor_Name" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Example Actor"
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ManaLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "5/5"
+
+[node name="ManaBar" type="Control" parent="VBoxContainer/HBoxContainer/ManaLabel"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_gt1v7")
+fill_color = Color(0.380919, 0.473144, 1, 1)
+top_ratio = 0.657
+
+[node name="HealthLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = " 20/20"
+
+[node name="HealthBar" type="Control" parent="VBoxContainer/HBoxContainer/HealthLabel"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_gt1v7")
+fill_color = Color(1, 0, 0, 1)
+top_ratio = 0.657
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Actor_Name" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Example Actor"
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ManaLabel" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "5/5"
+
+[node name="ManaBar" type="Control" parent="VBoxContainer/HBoxContainer2/ManaLabel"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_gt1v7")
+fill_color = Color(0.380919, 0.473144, 1, 1)
+top_ratio = 0.657
+
+[node name="HealthLabel" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = " 20/20"
+
+[node name="HealthBar" type="Control" parent="VBoxContainer/HBoxContainer2/HealthLabel"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_gt1v7")
+fill_color = Color(1, 0, 0, 1)
+top_ratio = 0.657
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Actor_Name" type="Label" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Example Actor"
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ManaLabel" type="Label" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "5/5"
+
+[node name="ManaBar" type="Control" parent="VBoxContainer/HBoxContainer3/ManaLabel"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_gt1v7")
+fill_color = Color(0.380919, 0.473144, 1, 1)
+top_ratio = 0.657
+
+[node name="HealthLabel" type="Label" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = " 20/20"
+
+[node name="HealthBar" type="Control" parent="VBoxContainer/HBoxContainer3/HealthLabel"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_gt1v7")
+fill_color = Color(1, 0, 0, 1)
+top_ratio = 0.657
+
+[node name="ActorBox" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -189.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Control" type="MarginContainer" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -480.0
+offset_right = 358.0
+offset_bottom = -217.0
+grow_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="SkillBox" type="Control" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 2

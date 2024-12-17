@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=3 format=3 uid="uid://b13lpinxvi0s1"]
+
+[ext_resource type="Resource" uid="uid://b33gugksikojh" path="res://skills/spell.tres" id="1_e2p72"]
+[ext_resource type="Script" path="res://combat_system/RPGCombat/skills.gd" id="2_axcfs"]
+
+[resource]
+script = ExtResource("2_axcfs")
+name = "Fire Ball"
+description = ""
+parent = ExtResource("1_e2p72")
+visible = true
+target_mode = 1
+target_filter = 7

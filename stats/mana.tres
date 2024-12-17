@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Stat" load_steps=2 format=3 uid="uid://denblve0tera5"]
+
+[ext_resource type="Script" path="res://combat_system/RPGCombat/stat.gd" id="1_n3y8b"]
+
+[resource]
+script = ExtResource("1_n3y8b")
+label = "Mana"
+color = Color(0, 0, 1, 1)

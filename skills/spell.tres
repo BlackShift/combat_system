@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=2 format=3 uid="uid://b33gugksikojh"]
+
+[ext_resource type="Script" path="res://combat_system/RPGCombat/skills.gd" id="1_cpmjy"]
+
+[resource]
+script = ExtResource("1_cpmjy")
+name = "Spell"
+description = ""
+visible = true
+target_mode = 0
+target_filter = 0

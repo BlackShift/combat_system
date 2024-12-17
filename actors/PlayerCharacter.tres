@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Actor" load_steps=10 format=3 uid="uid://dqoi5cu4w7812"]
+
+[ext_resource type="Resource" uid="uid://511h3ek8voqc" path="res://combat_system/stats/health.tres" id="1_840pw"]
+[ext_resource type="Script" uid="uid://bwffbk0ovker2" path="res://combat_system/RPGCombat/actor.gd" id="2_5hqvu"]
+[ext_resource type="Script" uid="uid://7rtysdwl40ds" path="res://combat_system/RPGCombat/stat_state.gd" id="2_glhkb"]
+[ext_resource type="Script" uid="uid://bv3qu714747ed" path="res://combat_system/RPGCombat/skills.gd" id="2_luwrk"]
+[ext_resource type="Resource" uid="uid://b33gugksikojh" path="res://combat_system/skills/spell.tres" id="5_fd7g4"]
+[ext_resource type="Resource" uid="uid://diacbrb8fd55i" path="res://combat_system/skills/attack.tres" id="5_rsuan"]
+[ext_resource type="Resource" uid="uid://b13lpinxvi0s1" path="res://combat_system/skills/spells/fire_ball.tres" id="6_fqs8n"]
+[ext_resource type="Curve" uid="uid://c7lm13t0k13sb" path="res://combat_system/stats/level_curves/health_curve.tres" id="7_oxv0r"]
+
+[sub_resource type="Resource" id="Resource_kx7gt"]
+script = ExtResource("2_glhkb")
+stats = ExtResource("1_840pw")
+level_curve = ExtResource("7_oxv0r")
+value = 20.0
+
+[resource]
+script = ExtResource("2_5hqvu")
+stats = Array[ExtResource("2_glhkb")]([SubResource("Resource_kx7gt")])
+skills = Array[ExtResource("2_luwrk")]([ExtResource("5_rsuan"), ExtResource("5_fd7g4"), ExtResource("6_fqs8n")])
+name = "Bob"
+primary_stat = ExtResource("1_840pw")
+level = 0

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=2 format=3 uid="uid://diacbrb8fd55i"]
+
+[ext_resource type="Script" uid="uid://bv3qu714747ed" path="res://combat_system/RPGCombat/skills.gd" id="1_1pi63"]
+
+[resource]
+script = ExtResource("1_1pi63")
+name = "Attack"
+description = "Single Target Attack"
+visible = true
+target_mode = 1
+target_filter = 2

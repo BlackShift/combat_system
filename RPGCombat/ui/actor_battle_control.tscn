@@ -1,0 +1,92 @@
+[gd_scene load_steps=4 format=3 uid="uid://d26an2ux3jdm0"]
+
+[ext_resource type="Script" path="res://combat_system/RPGCombat/ui/battleStats.gd" id="1_c418y"]
+[ext_resource type="Script" path="res://combat_system/RPGCombat/ui/actor_battle_control.gd" id="1_ufypy"]
+[ext_resource type="Script" path="res://combat_system/RPGCombat/ui/animation_slice.gd" id="2_wqi2k"]
+
+[node name="ActorBattleControl" type="VBoxContainer"]
+alignment = 2
+script = ExtResource("1_ufypy")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="ActorName" type="Label" parent="PanelContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Example Actor"
+
+[node name="Control" type="Control" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SecondaryLabel" type="Label" parent="PanelContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "5/5"
+
+[node name="SecondaryBar" type="Control" parent="PanelContainer/HBoxContainer/SecondaryLabel"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c418y")
+fill_color = Color(0.380919, 0.473144, 1, 1)
+top_ratio = 0.657
+
+[node name="PrimaryLabel" type="Label" parent="PanelContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = " 20/20"
+
+[node name="PrimaryBar" type="Control" parent="PanelContainer/HBoxContainer/PrimaryLabel"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c418y")
+fill_color = Color(1, 0, 0, 1)
+top_ratio = 0.657
+
+[node name="AnimatedRegion" type="Control" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(241.765, 175.42)
+layout_mode = 2
+script = ExtResource("2_wqi2k")
+mode = 2
+anim_duration = 0.5
+controlled_by_container = true
+start_closed = false
+
+[node name="ActionPanel" type="PanelContainer" parent="AnimatedRegion"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="AnimatedRegion/ActionPanel"]
+layout_mode = 2
+follow_focus = true
+
+[node name="MarginContainer" type="MarginContainer" parent="AnimatedRegion/ActionPanel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ButtonList" type="VBoxContainer" parent="AnimatedRegion/ActionPanel/ScrollContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2

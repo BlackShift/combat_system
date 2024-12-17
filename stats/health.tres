@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Stat" load_steps=2 format=3 uid="uid://511h3ek8voqc"]
+
+[ext_resource type="Script" path="res://combat_system/RPGCombat/stat.gd" id="1_j04rk"]
+
+[resource]
+script = ExtResource("1_j04rk")
+label = "Health"
+color = Color(0, 0.648797, 0.131894, 1)
